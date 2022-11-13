@@ -45,7 +45,7 @@ $arr->add(4); // додаємо в масив число 2
 $arr->add(5); // Додаємо в масив число 3
 
 //get the sum of squares and cubes of array elements
-echo("The sum of squares and cubes of (3,4,5): " . $arr->getSum23() );
+echo("The sum of squares and cubes of (3,4,5): " . $arr->getSum23());
 
 
 echo "<hr />";
@@ -60,7 +60,7 @@ echo "<pre>",
 "</pre>";
 
 //create an instance of the class
-$newproduct = new Product("Car", 10000,  5);
+$newproduct = new Product("Car", 10000, 5);
 //display $newproduct information
 echo("  NAME: " . $newproduct->getName() . " " . "PRICE: " . $newproduct->getPrice() . " " . "COAST: " . $newproduct->getCost());
 
@@ -81,13 +81,17 @@ echo "<pre>",
 ",
 "</pre>";
 
-$newCart =new Cart();
-$product1 = new Product("Cake", 2, 1000); //create an instance of the class
-echo("Name product1: " . $product1->getName() . " " . "Price product1: " . $product1->getPrice());
+$newCart = new Cart();
+$product1 = new Product("Cake", 5, 4); //create an instance of the class
+echo("product1 - Name : " . $product1->getName() . " " . "Price : " . $product1->getPrice() . " " . "Quantity : " . $product1->getQuantity());
 echo "<br />";
 
-$product2 =  new Product("Bread", 3, 500);
-echo("Name product2: " . $product2->getName() . " " . "Price product2: " . $product2->getPrice());
+$product2 = new Product("Bread", 3, 2);
+echo("product2 - Name : " . $product2->getName() . " " . "Price : " . $product2->getPrice() . " " . "Quantity : " . $product2->getQuantity());
+echo "<br />";
+
+$product3 = new Product("Apple", 2, 10);
+echo("product3 - Name: " . $product3->getName() . " " . "Price : " . $product3->getPrice() . " " . "Quantity : " . $product3->getQuantity());
 echo "<br />";
 
 $newCart->add($product1);
@@ -96,15 +100,21 @@ $newCart->getInfo();
 echo "<br />";
 
 $newCart->add($product2);
-echo "Cart after added product2 : ";
+$newCart->add($product3);
+echo "Cart after added product2 and product3: ";
 $newCart->getInfo();
 echo "<br />";
 
 $newCart->remove("Cake");
 echo "Cart after removed product1 : ";
 $newCart->getInfo();
+echo "<br />";
 
-
+echo "The cost of all items in the cart : " . $newCart->getTotalCost();
+echo "<br />";
+echo "Total number of items in the cart : " . $newCart->getTotalQuantity();
+echo "<br />";
+echo "Average unit price : " . $newCart->getAvgPrice();
 
 echo "<hr />";
 

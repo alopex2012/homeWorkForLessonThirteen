@@ -28,10 +28,32 @@ class Cart
 
     public function getInfo()
     {
-
-        for ($i=0; $i<count($this->products); $i++) {
-            echo "Item ". $i+1 ." - Name: {$this->products[$i]->getName()} Price: {$this->products[$i]->getPrice()} Quantity:  {$this->products[$i]->getQuantity()}";
+        for ($i = 0; $i < count($this->products); $i++) {
+            echo " Item " . $i + 1 . " - Name: {$this->products[$i]->getName()} Price: {$this->products[$i]->getPrice()} Quantity:  {$this->products[$i]->getQuantity()} .";
         }
+    }
+
+    public function getTotalCost()
+    {
+        $coast = 0;
+        for ($i = 0; $i < count($this->products); $i++) {
+            $coast += $this->products[$i]->getPrice() * $this->products[$i]->getQuantity();
+        }
+        return $coast;
+    }
+
+    public function getTotalQuantity()
+    {
+        $totalQuantity = 0;
+        for ($i = 0; $i < count($this->products); $i++) {
+            $totalQuantity += $this->products[$i]->getQuantity();
+        }
+        return $totalQuantity;
+    }
+
+    public function getAvgPrice()
+    {
+        return round($this->getTotalCost() / $this->getTotalQuantity(), 2);
     }
 }
 
