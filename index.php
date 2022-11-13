@@ -38,44 +38,16 @@ echo "<pre>",
     ",
 "</pre>";
 
-$newUser = new User(); //create an instance of the class
-$newUser->setName("Ahmet");
-$newUser->setAge(28);
-//display $newUser information
-echo("Name: " . $newUser->getName() . " " . "Age: " . $newUser->getAge());
-echo "<br />";
-
-$newStudent = new Student(); //create an instance of the class
-$newStudent->setName("Ahmad");
-$newStudent->setAge(22);
-//display $newStudent information
-echo("Name: " . $newStudent->getName() . " " . "Age: " . $newStudent->getAge());
-
-echo "<hr />";
-
-echo "<pre>",
-"
-    4.	Зробіть клас User, у якому будуть такі властивості лише читання: name і surname. Початкові значення 
-    цих властивостей повинні встановлюватись у конструкторі. Зробіть також гетери цих властивостей.
-    5.	Модифікуйте попереднє завдання так, щоб третім параметром конструктор передавалась дата 
-    народження працівника у форматі рік-місяць-день. Запишіть її у властивість birthday. 
-    Зробіть геттер для цієї властивості.
-    6.	Модифікуйте попереднє завдання так, щоб був приватний метод calculateAge, який параметром 
-    прийматиме дату народження, а повертатиме вік з урахуванням того, чи був уже день народження цього року, чи ні.
-    7.	Модифікуйте попереднє завдання так, щоб метод calculateAge викликався в конструкторі об'єкта, 
-    розраховував вік користувача та записував його в приватну властивість age. 
-    Зробіть геттер для цієї властивості.
-",
-"</pre>";
-
 //create an instance of the class
-$newSuperuser = new Superuser("Ibrahim", "Sherhani", "1973-07-03");
-//display $newSuperuser information
-echo("Name: " . $newSuperuser->getName() . " " . "Birthday: " . $newSuperuser->getBirthday() . " " . "Age: " . $newSuperuser->getAge());
-echo "<br />";
-$newSuperuser1 = new Superuser("Ilhan", "Chambek", "1988-12-22");
-//display $newSuperuser1 information
-echo "Name: " . $newSuperuser1->getName() . " " . "Birthday: " . $newSuperuser1->getBirthday() . " " . "Age: " . $newSuperuser1->getAge();
+$arr = new Arr();
+$arr->add(3); // додаємо в масив число 1
+$arr->add(4); // додаємо в масив число 2
+$arr->add(5); // Додаємо в масив число 3
+
+//get the sum of squares and cubes of array elements
+echo("The sum of squares and cubes of (3,4,5): " . $arr->getSum23() );
+
+
 echo "<hr />";
 
 echo "<pre>",
@@ -88,9 +60,9 @@ echo "<pre>",
 "</pre>";
 
 //create an instance of the class
-$newEmployee = new Employee("Mirza", "Immadulo", "1990-09-11", 3500);
-//display $newEmployee information
-echo("Name: " . $newEmployee->getName() . " " . "Birthday: " . $newEmployee->getBirthday() . " " . "Salary: " . $newEmployee->getSalary());
+$newproduct = new Product("Car", 10000,  5);
+//display $newproduct information
+echo("  NAME: " . $newproduct->getName() . " " . "PRICE: " . $newproduct->getPrice() . " " . "COAST: " . $newproduct->getCost());
 
 echo "<hr />";
 
@@ -109,11 +81,30 @@ echo "<pre>",
 ",
 "</pre>";
 
-$product1 = new Product("Car", 20000); //create an instance of the class
+$newCart =new Cart();
+$product1 = new Product("Cake", 2, 1000); //create an instance of the class
 echo("Name product1: " . $product1->getName() . " " . "Price product1: " . $product1->getPrice());
 echo "<br />";
-$product2 = $product1;
+
+$product2 =  new Product("Bread", 3, 500);
 echo("Name product2: " . $product2->getName() . " " . "Price product2: " . $product2->getPrice());
+echo "<br />";
+
+$newCart->add($product1);
+echo "Cart after added product1 : ";
+$newCart->getInfo();
+echo "<br />";
+
+$newCart->add($product2);
+echo "Cart after added product2 : ";
+$newCart->getInfo();
+echo "<br />";
+
+$newCart->remove("Cake");
+echo "Cart after removed product1 : ";
+$newCart->getInfo();
+
+
 
 echo "<hr />";
 

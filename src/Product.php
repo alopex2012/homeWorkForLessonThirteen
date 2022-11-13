@@ -15,6 +15,21 @@ class Product
         $this->quantity = $quantity;
     }
 
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    public function getPrice()
+    {
+        return $this->price;
+    }
+
+    public function getQuantity()
+    {
+        return $this->quantity;
+    }
+
     public function getCost()
     {
         return $this->price * $this->quantity;
