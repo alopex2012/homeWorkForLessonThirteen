@@ -47,7 +47,6 @@ $arr->add(5); // Додаємо в масив число 3
 //get the sum of squares and cubes of array elements
 echo("The sum of squares and cubes of (3,4,5): " . $arr->getSum23());
 
-
 echo "<hr />";
 
 echo "<pre>",
@@ -62,7 +61,7 @@ echo "<pre>",
 //create an instance of the class
 $newproduct = new Product("Car", 10000, 5);
 //display $newproduct information
-echo("  NAME: " . $newproduct->getName() . " " . "PRICE: " . $newproduct->getPrice() . " " . "COAST: " . $newproduct->getCost());
+echo("  NAME : " . $newproduct->getName() . " " . "PRICE : " . $newproduct->getPrice() . " ". "QUANTITY : " . $newproduct->getQuantity() . " " . "COAST: " . $newproduct->getCost());
 
 echo "<hr />";
 
@@ -81,15 +80,20 @@ echo "<pre>",
 ",
 "</pre>";
 
+//create an instance of the class
 $newCart = new Cart();
-$product1 = new Product("Cake", 5, 4); //create an instance of the class
+
+//create an instance of the class
+$product1 = new Product("Cake", 5, 4);
 echo("product1 - Name : " . $product1->getName() . " " . "Price : " . $product1->getPrice() . " " . "Quantity : " . $product1->getQuantity());
 echo "<br />";
 
+//create an instance of the class
 $product2 = new Product("Bread", 3, 2);
 echo("product2 - Name : " . $product2->getName() . " " . "Price : " . $product2->getPrice() . " " . "Quantity : " . $product2->getQuantity());
 echo "<br />";
 
+//create an instance of the class
 $product3 = new Product("Apple", 2, 10);
 echo("product3 - Name: " . $product3->getName() . " " . "Price : " . $product3->getPrice() . " " . "Quantity : " . $product3->getQuantity());
 echo "<br />";
